@@ -485,6 +485,16 @@ document.querySelector('[data-action="download-nx-json"]').addEventListener("cli
     }
 });
 
+// 120-fps-tool
+const btn120Fps = document.querySelector('[data-action="120-fps-tool"]');
+if (btn120Fps) {
+    btn120Fps.addEventListener("click", () => {
+        if (window.chrome && window.chrome.webview) {
+            window.chrome.webview.postMessage("120-fps-tool");
+        }
+    });
+}
+
 // dp-clat
 document.querySelector('[data-action="dp-clat"]').addEventListener("click", () => {
     if (window.chrome && window.chrome.webview) {
